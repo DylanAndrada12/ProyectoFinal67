@@ -1,0 +1,860 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Usuarios — Biblioteca Invaluable</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="barra-navegacion">
+
+        <div class="barra-interior">
+
+            <div class="barra-izquierda">
+
+                <a class="nombre-biblioteca" href="index.html">
+                    Biblioteca Invaluable
+                </a>
+
+                <span class="separador">|</span>
+
+                <span class="seccion-nombre">
+                    Panel de Administración
+                </span>
+
+            </div>
+
+
+            <details class="menu-usuario">
+
+                <summary>
+                    👤
+                    <span>Admin</span>
+                    ▼
+                </summary>
+
+                <div class="menu-desplegable">
+
+                    <a href="#">
+                        🚪 Cerrar sesión
+                    </a>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor">
+
+
+        <!-- ENCABEZADO -->
+        <div class="encabezado-pagina">
+
+            <div class="titulo-pagina">
+
+                <span class="icono-grande">👤</span>
+
+                <div>
+
+                    <h1>Gestión de Usuarios</h1>
+
+                    <p class="texto-suave">
+                        Administra los usuarios registrados en la biblioteca.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESTE BOTÓN DESPUÉS LO VAS A PROGRAMAR VOS -->
+            <button class="boton boton-principal" id="boton-nuevo-usuario">
+                ➕ Nuevo Usuario
+            </button>
+
+        </div>
+
+
+
+        <!-- ====================================== -->
+        <!-- SECCIÓN NUEVO USUARIO                  -->
+        <!-- OCULTA HASTA QUE LA MOSTREMOS CON JS  -->
+        <!-- ====================================== -->
+
+        <section class="tarjeta seccion oculto" id="seccion-nuevo-usuario">
+
+            <div class="cuerpo-tarjeta">
+
+                <h2 class="titulo-seccion">
+                    Nuevo Usuario
+                </h2>
+
+
+                <div class="formulario-grid">
+
+
+                    <div class="grupo-formulario">
+
+                        <label class="etiqueta-formulario" for="nombre-usuario">
+                            Nombre Completo
+                        </label>
+
+                        <input
+                            type="text"
+                            class="campo-formulario"
+                            id="nombre-usuario"
+                            placeholder="Ingrese nombre completo"
+                        >
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label class="etiqueta-formulario" for="dni-usuario">
+                            DNI
+                        </label>
+
+                        <input
+                            type="text"
+                            class="campo-formulario"
+                            id="dni-usuario"
+                            placeholder="Ingrese DNI"
+                        >
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label class="etiqueta-formulario" for="curso-usuario">
+                            Curso
+                        </label>
+
+                        <select
+                            class="campo-formulario"
+                            id="curso-usuario"
+                        >
+
+                            <option value="">
+                                Seleccione un curso
+                            </option>
+
+                            <option value="5to A">
+                                5to A
+                            </option>
+
+                            <option value="5to B">
+                                5to B
+                            </option>
+
+                            <option value="6to A">
+                                6to A
+                            </option>
+
+                            <option value="7mo A">
+                                7mo A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label class="etiqueta-formulario" for="correo-usuario">
+                            Correo
+                        </label>
+
+                        <input
+                            type="email"
+                            class="campo-formulario"
+                            id="correo-usuario"
+                            placeholder="Ingrese correo"
+                        >
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label class="etiqueta-formulario" for="telefono-usuario">
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="text"
+                            class="campo-formulario"
+                            id="telefono-usuario"
+                            placeholder="Ingrese teléfono"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="acciones-formulario">
+
+                    <button
+                        type="button"
+                        class="boton boton-principal"
+                        id="boton-guardar-usuario"
+                    >
+                        Guardar Usuario
+                    </button>
+
+                    <button
+                        type="button"
+                        class="boton boton-secundario"
+                        id="boton-cancelar-usuario"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BÚSQUEDA -->
+        <section class="tarjeta seccion">
+
+            <div class="cuerpo-tarjeta">
+
+                <h2 class="titulo-seccion">
+                    Búsqueda Avanzada
+                </h2>
+
+
+                <form class="formulario-busqueda" id="formulario-busqueda">
+
+
+                    <div class="grupo-formulario">
+
+                        <label
+                            for="buscar-nombre"
+                            class="etiqueta-formulario"
+                        >
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            class="campo-formulario"
+                            id="buscar-nombre"
+                            placeholder="Ingrese nombre completo"
+                        >
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label
+                            for="buscar-dni"
+                            class="etiqueta-formulario"
+                        >
+                            DNI
+                        </label>
+
+                        <input
+                            type="text"
+                            class="campo-formulario"
+                            id="buscar-dni"
+                            placeholder="Ingrese DNI"
+                        >
+
+                    </div>
+
+
+                    <div class="grupo-formulario">
+
+                        <label
+                            for="buscar-curso"
+                            class="etiqueta-formulario"
+                        >
+                            Curso
+                        </label>
+
+                        <select
+                            class="campo-formulario"
+                            id="buscar-curso"
+                        >
+
+                            <option value="">
+                                Todos los cursos
+                            </option>
+
+                            <option value="5to A">
+                                5to A
+                            </option>
+
+                            <option value="5to B">
+                                5to B
+                            </option>
+
+                            <option value="6to A">
+                                6to A
+                            </option>
+
+                            <option value="7mo A">
+                                7mo A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="acciones-busqueda">
+
+                        <button
+                            type="submit"
+                            class="boton boton-principal"
+                        >
+                            🔍 Buscar
+                        </button>
+
+                        <a
+                            href="index.html"
+                            class="boton boton-secundario"
+                        >
+                            ✖ Limpiar
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LISTADO DE USUARIOS -->
+        <section class="tarjeta seccion">
+
+            <div class="cuerpo-tarjeta">
+
+                <h2 class="titulo-seccion">
+                    Listado de Usuarios
+                </h2>
+
+
+                <div class="contenedor-tabla">
+
+                    <table class="tabla" id="tabla-usuarios">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Nombre Completo</th>
+                                <th>DNI</th>
+                                <th>Curso</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="lista-usuarios">
+
+
+                            <!-- USUARIO 1 -->
+                            <tr>
+
+                                <td class="texto-suave">
+                                    #1
+                                </td>
+
+                                <td>
+                                    Ana García
+                                </td>
+
+                                <td>
+                                    30123456
+                                </td>
+
+                                <td>
+                                    5to A
+                                </td>
+
+                                <td>
+                                    ana.garcia@correo.com
+                                </td>
+
+                                <td>
+                                    +54 11 5555-0001
+                                </td>
+
+                                <td class="acciones-tabla">
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Ver usuario"
+                                    >
+                                        👁️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Editar usuario"
+                                    >
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono boton-eliminar"
+                                        title="Eliminar usuario"
+                                    >
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USUARIO 2 -->
+                            <tr>
+
+                                <td class="texto-suave">
+                                    #2
+                                </td>
+
+                                <td>
+                                    Bruno Fernández
+                                </td>
+
+                                <td>
+                                    29876543
+                                </td>
+
+                                <td>
+                                    6to A
+                                </td>
+
+                                <td>
+                                    bruno.fernandez@correo.com
+                                </td>
+
+                                <td>
+                                    +54 11 5555-0002
+                                </td>
+
+                                <td class="acciones-tabla">
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Ver usuario"
+                                    >
+                                        👁️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Editar usuario"
+                                    >
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono boton-eliminar"
+                                        title="Eliminar usuario"
+                                    >
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- USUARIO 3 -->
+                            <tr>
+
+                                <td class="texto-suave">
+                                    #3
+                                </td>
+
+                                <td>
+                                    Carla Ibáñez
+                                </td>
+
+                                <td>
+                                    31234567
+                                </td>
+
+                                <td>
+                                    7mo A
+                                </td>
+
+                                <td>
+                                    carla.ibanez@correo.com
+                                </td>
+
+                                <td>
+                                    +54 11 5555-0003
+                                </td>
+
+                                <td class="acciones-tabla">
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Ver usuario"
+                                    >
+                                        👁️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono"
+                                        title="Editar usuario"
+                                    >
+                                        ✏️
+                                    </button>
+
+                                    <button
+                                        class="boton-icono boton-eliminar"
+                                        title="Eliminar usuario"
+                                    >
+                                        🗑️
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- PAGINACIÓN -->
+                <div class="barra-paginacion">
+
+                    <p class="texto-suave">
+                        Mostrando 1 a 3 de 24 usuarios
+                    </p>
+
+
+                    <nav class="paginacion">
+
+                        <button class="enlace-paginacion">
+                            «
+                        </button>
+
+                        <button class="enlace-paginacion">
+                            ‹
+                        </button>
+
+                        <button class="enlace-paginacion pagina-actual">
+                            1
+                        </button>
+
+                        <button class="enlace-paginacion">
+                            2
+                        </button>
+
+                        <button class="enlace-paginacion">
+                            3
+                        </button>
+
+                        <span class="puntos-paginacion">
+                            ...
+                        </span>
+
+                        <button class="enlace-paginacion">
+                            8
+                        </button>
+
+                        <button class="enlace-paginacion">
+                            ›
+                        </button>
+
+                        <button class="enlace-paginacion">
+                            »
+                        </button>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESUMEN -->
+        <section class="resumen-grid">
+
+
+            <!-- ENTREGAS -->
+            <div class="tarjeta tarjeta-resumen">
+
+                <div class="cuerpo-tarjeta">
+
+                    <div class="encabezado-resumen">
+
+                        <h3>
+                            Entregas del Día
+                        </h3>
+
+                        <span>
+                            ⬆️
+                        </span>
+
+                    </div>
+
+                    <p class="numero-resumen">
+                        7
+                    </p>
+
+                    <p class="texto-suave">
+                        Libros entregados hoy
+                    </p>
+
+                    <a
+                        class="boton boton-secundario boton-ancho"
+                        href="#"
+                    >
+                        Ver detalles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEVOLUCIONES -->
+            <div class="tarjeta tarjeta-resumen">
+
+                <div class="cuerpo-tarjeta">
+
+                    <div class="encabezado-resumen">
+
+                        <h3>
+                            Devoluciones del Día
+                        </h3>
+
+                        <span>
+                            ⬇️
+                        </span>
+
+                    </div>
+
+                    <p class="numero-resumen">
+                        5
+                    </p>
+
+                    <p class="texto-suave">
+                        Libros devueltos hoy
+                    </p>
+
+                    <a
+                        class="boton boton-secundario boton-ancho"
+                        href="#"
+                    >
+                        Ver detalles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ATRASOS -->
+            <div class="tarjeta tarjeta-resumen">
+
+                <div class="cuerpo-tarjeta">
+
+                    <div class="encabezado-resumen">
+
+                        <h3>
+                            Atrasos Activos
+                        </h3>
+
+                        <span>
+                            ⏰
+                        </span>
+
+                    </div>
+
+                    <p class="numero-resumen">
+                        3
+                    </p>
+
+                    <p class="texto-suave">
+                        Usuarios con libros atrasados
+                    </p>
+
+                    <a
+                        class="boton boton-secundario boton-ancho"
+                        href="#"
+                    >
+                        Ver detalles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HISTORIAL -->
+            <div class="tarjeta tarjeta-resumen tarjeta-ancha">
+
+                <div class="cuerpo-tarjeta">
+
+                    <div class="encabezado-resumen">
+
+                        <h3>
+                            Historial Reciente
+                        </h3>
+
+                    </div>
+
+
+                    <ul class="lista-reciente">
+
+
+                        <li>
+
+                            <span class="etiqueta entrega">
+                                ⬆️
+                            </span>
+
+                            <span class="texto-reciente">
+
+                                <a href="#">
+                                    Ana García
+                                </a>
+
+                                — Entrega: El nombre de la rosa
+
+                            </span>
+
+                            <span class="texto-suave">
+                                10/09 14:32
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="etiqueta devolucion">
+                                ⬇️
+                            </span>
+
+                            <span class="texto-reciente">
+
+                                <a href="#">
+                                    Bruno Fernández
+                                </a>
+
+                                — Devolución: Cien años de soledad
+
+                            </span>
+
+                            <span class="texto-suave">
+                                10/09 11:05
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="etiqueta atraso">
+                                ⏰
+                            </span>
+
+                            <span class="texto-reciente">
+
+                                <a href="#">
+                                    Carla Ibáñez
+                                </a>
+
+                                — Atraso: Rayuela
+
+                            </span>
+
+                            <span class="texto-suave">
+                                09/09 09:47
+                            </span>
+
+                        </li>
+
+
+                    </ul>
+
+
+                    <a
+                        class="mas-reciente"
+                        href="#"
+                    >
+                        Ver historial completo →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+
+        <div class="pie-interior">
+
+            Sistema de Gestión de Biblioteca ·
+            Módulo de Gestión de Usuarios ·
+            Grupo 5
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
