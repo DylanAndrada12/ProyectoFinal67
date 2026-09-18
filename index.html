@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,7 +8,8 @@
 
     <title>Gestión de Usuarios — Biblioteca Invaluable</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -80,7 +81,6 @@
             </div>
 
 
-            <!-- ESTE BOTÓN DESPUÉS LO VAS A PROGRAMAR VOS -->
             <button class="boton boton-principal" id="boton-nuevo-usuario">
                 ➕ Nuevo Usuario
             </button>
@@ -88,11 +88,7 @@
         </div>
 
 
-
-        <!-- ====================================== -->
-        <!-- SECCIÓN NUEVO USUARIO                  -->
-        <!-- OCULTA HASTA QUE LA MOSTREMOS CON JS  -->
-        <!-- ====================================== -->
+        <!-- SECCIÓN NUEVO USUARIO -->
 
         <section class="tarjeta seccion oculto" id="seccion-nuevo-usuario">
 
@@ -234,8 +230,8 @@
         </section>
 
 
-
         <!-- BÚSQUEDA -->
+
         <section class="tarjeta seccion">
 
             <div class="cuerpo-tarjeta">
@@ -350,8 +346,8 @@
         </section>
 
 
-
         <!-- LISTADO DE USUARIOS -->
+
         <section class="tarjeta seccion">
 
             <div class="cuerpo-tarjeta">
@@ -382,173 +378,12 @@
                         </thead>
 
 
+                        <!--
+                            ESTE LISTADO COMIENZA VACÍO.
+                            JAVASCRIPT AGREGARÁ LOS USUARIOS ACÁ.
+                        -->
+
                         <tbody id="lista-usuarios">
-
-
-                            <!-- USUARIO 1 -->
-                            <tr>
-
-                                <td class="texto-suave">
-                                    #1
-                                </td>
-
-                                <td>
-                                    Ana García
-                                </td>
-
-                                <td>
-                                    30123456
-                                </td>
-
-                                <td>
-                                    5to A
-                                </td>
-
-                                <td>
-                                    ana.garcia@correo.com
-                                </td>
-
-                                <td>
-                                    +54 11 5555-0001
-                                </td>
-
-                                <td class="acciones-tabla">
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Ver usuario"
-                                    >
-                                        👁️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Editar usuario"
-                                    >
-                                        ✏️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono boton-eliminar"
-                                        title="Eliminar usuario"
-                                    >
-                                        🗑️
-                                    </button>
-
-                                </td>
-
-                            </tr>
-
-
-                            <!-- USUARIO 2 -->
-                            <tr>
-
-                                <td class="texto-suave">
-                                    #2
-                                </td>
-
-                                <td>
-                                    Bruno Fernández
-                                </td>
-
-                                <td>
-                                    29876543
-                                </td>
-
-                                <td>
-                                    6to A
-                                </td>
-
-                                <td>
-                                    bruno.fernandez@correo.com
-                                </td>
-
-                                <td>
-                                    +54 11 5555-0002
-                                </td>
-
-                                <td class="acciones-tabla">
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Ver usuario"
-                                    >
-                                        👁️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Editar usuario"
-                                    >
-                                        ✏️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono boton-eliminar"
-                                        title="Eliminar usuario"
-                                    >
-                                        🗑️
-                                    </button>
-
-                                </td>
-
-                            </tr>
-
-
-                            <!-- USUARIO 3 -->
-                            <tr>
-
-                                <td class="texto-suave">
-                                    #3
-                                </td>
-
-                                <td>
-                                    Carla Ibáñez
-                                </td>
-
-                                <td>
-                                    31234567
-                                </td>
-
-                                <td>
-                                    7mo A
-                                </td>
-
-                                <td>
-                                    carla.ibanez@correo.com
-                                </td>
-
-                                <td>
-                                    +54 11 5555-0003
-                                </td>
-
-                                <td class="acciones-tabla">
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Ver usuario"
-                                    >
-                                        👁️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono"
-                                        title="Editar usuario"
-                                    >
-                                        ✏️
-                                    </button>
-
-                                    <button
-                                        class="boton-icono boton-eliminar"
-                                        title="Eliminar usuario"
-                                    >
-                                        🗑️
-                                    </button>
-
-                                </td>
-
-                            </tr>
-
 
                         </tbody>
 
@@ -557,14 +392,13 @@
                 </div>
 
 
-
                 <!-- PAGINACIÓN -->
+
                 <div class="barra-paginacion">
 
                     <p class="texto-suave">
-                        Mostrando 1 a 3 de 24 usuarios
+                        Mostrando usuarios registrados
                     </p>
-
 
                     <nav class="paginacion">
 
@@ -593,10 +427,6 @@
                         </span>
 
                         <button class="enlace-paginacion">
-                            8
-                        </button>
-
-                        <button class="enlace-paginacion">
                             ›
                         </button>
 
@@ -613,12 +443,11 @@
         </section>
 
 
-
         <!-- RESUMEN -->
+
         <section class="resumen-grid">
 
 
-            <!-- ENTREGAS -->
             <div class="tarjeta tarjeta-resumen">
 
                 <div class="cuerpo-tarjeta">
@@ -655,8 +484,6 @@
             </div>
 
 
-
-            <!-- DEVOLUCIONES -->
             <div class="tarjeta tarjeta-resumen">
 
                 <div class="cuerpo-tarjeta">
@@ -693,8 +520,6 @@
             </div>
 
 
-
-            <!-- ATRASOS -->
             <div class="tarjeta tarjeta-resumen">
 
                 <div class="cuerpo-tarjeta">
@@ -731,8 +556,6 @@
             </div>
 
 
-
-            <!-- HISTORIAL -->
             <div class="tarjeta tarjeta-resumen tarjeta-ancha">
 
                 <div class="cuerpo-tarjeta">
@@ -745,9 +568,7 @@
 
                     </div>
 
-
                     <ul class="lista-reciente">
-
 
                         <li>
 
@@ -756,70 +577,12 @@
                             </span>
 
                             <span class="texto-reciente">
-
-                                <a href="#">
-                                    Ana García
-                                </a>
-
-                                — Entrega: El nombre de la rosa
-
-                            </span>
-
-                            <span class="texto-suave">
-                                10/09 14:32
+                                Sin movimientos recientes
                             </span>
 
                         </li>
-
-
-                        <li>
-
-                            <span class="etiqueta devolucion">
-                                ⬇️
-                            </span>
-
-                            <span class="texto-reciente">
-
-                                <a href="#">
-                                    Bruno Fernández
-                                </a>
-
-                                — Devolución: Cien años de soledad
-
-                            </span>
-
-                            <span class="texto-suave">
-                                10/09 11:05
-                            </span>
-
-                        </li>
-
-
-                        <li>
-
-                            <span class="etiqueta atraso">
-                                ⏰
-                            </span>
-
-                            <span class="texto-reciente">
-
-                                <a href="#">
-                                    Carla Ibáñez
-                                </a>
-
-                                — Atraso: Rayuela
-
-                            </span>
-
-                            <span class="texto-suave">
-                                09/09 09:47
-                            </span>
-
-                        </li>
-
 
                     </ul>
-
 
                     <a
                         class="mas-reciente"
@@ -839,8 +602,8 @@
     </main>
 
 
-
     <!-- PIE DE PÁGINA -->
+
     <footer class="pie-pagina">
 
         <div class="pie-interior">
@@ -857,4 +620,3 @@
 </body>
 
 </html>
-```
